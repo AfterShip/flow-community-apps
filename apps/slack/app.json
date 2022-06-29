@@ -15,7 +15,7 @@
             {
               "definition": {
                 "body": {
-                  "blocks": "{{$action_input.blocks}}",
+                  "blocks": "{{$action_input.blocks.blocks}}",
                   "text": "{{$action_input.text}}"
                 },
                 "description": "",
