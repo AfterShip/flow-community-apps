@@ -1,0 +1,72 @@
+{
+  "name": "Slack",
+  "description": "",
+  "icon_link": "https://flow.am-usercontent.com/42/2847473d2b4348399abe2cead603d644/3b876903-5e7c-4b66-8ede-4f3f864af8d3-icon_slack_hash_colored.png",
+  "events": [],
+  "credentials": [],
+  "actions": [
+    {
+      "name": "Send Message to Channel",
+      "description": "",
+      "version": "2.0",
+      "dsl": {
+        "definition": {
+          "steps": [
+            {
+              "definition": {
+                "body": {
+                  "blocks": "{{$action_input.blocks.blocks}}",
+                  "text": "{{$action_input.text}}"
+                },
+                "description": "",
+                "expected_codes": [
+                  201,
+                  200
+                ],
+                "header": {
+                  "Content-type": "application/json"
+                },
+                "host": "https://hooks.slack.com",
+                "method": "POST",
+                "name": "",
+                "path": "{{$action_input.incoming_webhook}}",
+                "result_key": "GzS9hhn-",
+                "type": "SECURE_HTTP"
+              },
+              "description": "",
+              "name": "",
+              "result_key": "GzS9hhn-",
+              "type": "SECURE_HTTP"
+            }
+          ]
+        },
+        "type": "GROUP"
+      },
+      "input": {
+        "blocks": "",
+        "incoming_webhook": "",
+        "text": ""
+      },
+      "schema": [
+        {
+          "label": "Incoming Webhook Path",
+          "name": "incoming_webhook",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "label": "Text",
+          "name": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "label": "Blocks",
+          "name": "blocks",
+          "required": false,
+          "type": "json"
+        }
+      ]
+    }
+  ]
+}
